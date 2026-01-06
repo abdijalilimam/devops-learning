@@ -1,0 +1,118 @@
+#This is place where i recorded all the solutions to the overthewire bandit games and explanations 
+
+level 0:
+
+ssh bandit0@bandit.labs.overthewire.org -p 2220
+password1:ZjLjTmM6FvvyRnrb2rfNWOZOTa6ip5If
+
+level 1:
+
+used ls to view "-"
+then used "./" to view "-"
+password2: 263JGJPfgU6LtdEvgfWU1XP5yac29mFx
+
+level 2: 
+
+used ls view
+then used cat -- "--spaces in this filename--"
+password3:MNk8KNH3Usiio41PRUEoDFPqfxLPlSmx
+
+level 3: 
+
+used "ls" to view 
+then used "ls -a" to see hidding file 
+then used "cat" to view the content inside 
+password4:2WmrDFRmJIq3IPxneAaMGhap0pFhF3NJ
+
+level 4: 
+
+used 'ls' to view
+then used "cd" to navigate
+then used "cat" to check each file
+password5:4oQYVPkxZOOEOO5pTW81FB8j8lxXGUQw
+
+level 5: 
+
+used "ls" to view 
+then used "file ./*" to see file type 
+in the same line i used "-size 1033c" to see the 1033 bytes 
+then used ! to excluded other files and used "-executable" 
+to see if the file is executable.
+full command "file ./* -size 1033c ! -executable"
+password6:HWasnPhtq9AVKe0dmk45nxy20cvUa6EG
+
+level 6: 
+
+used "cd .." to navigate to the root 
+ran " find -type f -user bandit7 -group bandit6 -size 33c"
+that showed permission denied then i found out i had to add 2>dev/null to supress out
+to see through it then i use "cat" to view it
+password7:morbNTDkSW6jIlUc0ymOdMaLnOlFVAaj
+
+level 7: 
+
+used "tail data.txt" to see the last 10 lines that did not work
+used "head data.txt" to see the first 10 lines that did not work
+used "grep millionth data.txt"
+password8:dfwvzFQi4mU0wfNbFOe9RoWskMLg7eEc
+
+level 8: 
+
+used "sort" in the begining of the file 
+then used "|" to put stdout of the command in to the stdin of a the new command
+password9:4CKMh1JI91bUIZZPXDqGanal4xvAg0JM
+
+level 9: 
+
+used "vim" to see the content of the file i was unable to read it 
+then used the command "strings" to see if it is human readable
+then used '|' to filter through the output or stdout
+then used the "grep" command to find excatly == which the password was next to
+password10:FGUW5ilLVJrxX9kMYMmlN4MgbpfMiqey
+
+level 10: 
+
+used "man" to learn more about "base64"
+used "based64" coupled with "-d" to decode the data.txt
+full command was "base64 -d data.txt"
+password11:dtR173fZKb0RRsDFSGsg2RWnpNVj3qRr
+
+level 11: 
+
+used "cat" to read the text inside the file 
+then used "|" to pass it throught the stdout to stdin of "tr"
+"tr" is used to translate/decode strings since the file was encoded with rot13
+rot13 moves 1st possition aphabet to the 13th places
+so to decode that you will say every capital A - Z and small leter a-z  "A-Za-z"
+ "N-ZA-Mn-za-m" place it 13th positon which is N - A and A - Z and do the same for the lowercase letter 
+password12:7x16WNeHIi5YkIhWsfFIqoognUTyj9Q4
+
+level 12: 
+
+step one is to create a directory in the working direcotory under /tmp usking "mkdir"
+then copy the file data.txt using "cp"
+use "xxd" for reversing the data type on the file 
+use "xxd -r" to reverse the file back to binary format.
+then dump it in to another file like "data"
+use "mv" to change the file extentions before decopressing it 
+because some decompressing tools like gzip expect a .gz file extension.
+used "mv" to chnage file to .gz 
+used "gzip -d" to decompress
+then used "file" to check the file type
+used "mv" to chnage file to .bz2
+used "bzip2 -d" to decompress it even more
+then used "file" to check the file type
+used "mv" to chnage file to .gz 
+used "gzip -d" to decompress
+then used "file" to check the file type
+then it was "POSIX tar archive"
+used "tr xf" to extract it after using "mv" to chnage the file type
+password13:FO5dwFsc0cbaIiH0h8J2eUks2vdTDwAn
+
+Linux CLI Shortcuts 
+
+Use command: “history” to show previously listed in the command 
+
+used “!” followed by the command number from history to ran it.
+
+use “ctlr + r” to do reverse search
