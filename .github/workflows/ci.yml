@@ -1,0 +1,12 @@
+name: first docker build check wf      #name of the wf
+
+on: [push]    # the trigger of the wf 
+
+jobs:       #the list of jobs this wf will do 
+    docker-build-Checkout     #name of the jobs action
+        runs-on: ubuntu-latest   #run it on fresh linux machine
+            steps: 
+                - name: Checkout code    #name of the steps action
+                  uses: actions/Checkout@v4     #this download my code into a temporary linux machine 
+                - name: Docker build Checkout     #name of the build action
+                  run: docker build -t flask-app ./cicd/task-1/app   #the path where the action is taking place 
