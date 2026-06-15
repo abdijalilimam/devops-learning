@@ -25,6 +25,5 @@ jobs:       #build and push docker image
         uses: docker/build-push-action@v7
         with:                   #steps need to build image 
             context: cicd/task-1/app
-            file: Dockerfile
             push: true 
             tags: abdijalilimam/flask-app:latest # this is so that it pull the latest images 
