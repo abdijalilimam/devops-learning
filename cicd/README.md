@@ -1,28 +1,26 @@
-I Have Built my first CI/CD workflow 
+# CI/CD Pipeline Project
 
+## What I Built
+I built my first CI/CD workflow. Here is how that was done:
 
-here is how that was done:
+1. Made a simple Python Flask app and ran it locally
+2. Containerized it using Docker and built the image successfully
+3. Made a `.github/workflows` at the root to initialize pipelines
+4. Made a `ci.yml` that was triggered on push to check if the Docker image built successfully
+5. Made a `cd.yml` that builds and pushes the image to Docker Hub
 
-- step 1: made a simple python flask app and ran it locally 
+## What I Learned
+- YAML syntax
+- Difference between CI and CD — CI is like making a product, CD is like UPS delivering it to the customer
+- `.github/workflows` must live at the root, not anywhere else
 
-- step 2: Containerized it using docker and built image successfully 
+## Issues I Ran Into
+- YAML indentation errors causing red squiggles in VS Code
+- Used `vars.DOCKERHUB_USERNAME` instead of `secrets.DOCKERHUB_USERNAME`
 
-- step 3: Made a .github/workflow at the root to initilize pipelines 
+## Pipeline Files
+- CI: `.github/workflows/ci.yml`
+- CD: `.github/workflows/cd.yml`
 
-- step 4: made a ci.yml that was triggered on push that if the docker image was build successfully  
-
-- step 5: made a cd.yml that build and pushed the image to the dockerhub
-
-
-
-What I have Learned 
-
-- The yaml sytanx  
-- Diffrence between CI and CD 
-- Having .github/workflows at the root and not anywhere else 
-
-
-Issues I ran into
-- yaml indetation errors 
-- used vars.DOCKERHUB_USERNAME instead of secrets.DOCKERHUB_USERNAME
-
+## Screenshots
+See `screenshots/` folder.
