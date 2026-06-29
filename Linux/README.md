@@ -206,7 +206,7 @@ cat <extracted file>
 
 ---
 
-## ⚡ CLI Shortcuts & Productivity Tips
+## CLI Shortcuts & Productivity Tips
 
 | Shortcut / Command | Description |
 |---|---|
@@ -218,7 +218,7 @@ cat <extracted file>
 
 ---
 
-## 🛠️ Commands Reference
+## Commands Reference
 
 | Command | What it does |
 |---|---|
