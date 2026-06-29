@@ -4,7 +4,7 @@ A personal record of solutions and key Linux concepts picked up while working th
 
 ---
 
-## 🔌 Connecting
+## Connecting
 
 ```bash
 ssh bandit<LEVEL>@bandit.labs.overthewire.org -p 2220
@@ -12,7 +12,7 @@ ssh bandit<LEVEL>@bandit.labs.overthewire.org -p 2220
 
 ---
 
-## 📚 Levels Overview
+## Levels Overview
 
 ### Level 0 → 1
 **Goal:** Log in via SSH.
